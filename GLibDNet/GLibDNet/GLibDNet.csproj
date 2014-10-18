@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A2B26D9-7046-4155-A3CB-422BE35E6510}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GLibDNet</RootNamespace>
+    <AssemblyName>GLibDNet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\ConfigManager.cs" />
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="Config\ConfigUtility.cs" />
+    <Compile Include="Drawing\DrawUtil.cs" />
+    <Compile Include="Drawing\Elements\BaseGameElement.cs" />
+    <Compile Include="Drawing\Elements\MovableGameElement.cs" />
+    <Compile Include="Drawing\Elements\TextViewer.cs" />
+    <Compile Include="Drawing\Elements\Velocity.cs" />
+    <Compile Include="Drawing\Position.cs" />
+    <Compile Include="Drawing\Shapes\Circle.cs" />
+    <Compile Include="Drawing\Shapes\Rectangle.cs" />
+    <Compile Include="Drawing\Shapes\Shape.cs" />
+    <Compile Include="Drawing\Shapes\ShapeUtil.cs" />
+    <Compile Include="Key\ActionKey.cs" />
+    <Compile Include="Key\InputManager.cs" />
+    <Compile Include="Sound\SoundEngine.cs" />
+    <Compile Include="Sound\SoundEngineFactory.cs" />
+    <Compile Include="Sound\SoundEngineList.cs" />
+    <Compile Include="Sound\SoundManager.cs" />
+    <Compile Include="Sound\SoundPathProperty.cs" />
+    <Compile Include="Sound\SoundProperty.cs" />
+    <Compile Include="Sound\SoundStreamProperty.cs" />
+    <Compile Include="Sound\SoundType.cs" />
+    <Compile Include="Sound\WaveEngine.cs" />
+    <Compile Include="Update\AnimationGenerator.cs" />
+    <Compile Include="Update\DisplayArea.cs" />
+    <Compile Include="Update\DrawableContents.cs" />
+    <Compile Include="Update\DrawResultEnum.cs" />
+    <Compile Include="Update\GameFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update\GameLoopGenerator.cs" />
+    <Compile Include="Update\LoadingScene.cs" />
+    <Compile Include="Update\Scene.cs" />
+    <Compile Include="Update\SceneFactory.cs" />
+    <Compile Include="Update\SceneParameter.cs" />
+    <Compile Include="Update\SceneSwitcher.cs" />
+    <Compile Include="Update\UpdatableContents.cs" />
+    <Compile Include="GameProperties.cs" />
+    <Compile Include="GLibDNet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Update\UpdatedStateEnum.cs" />
+    <Compile Include="Util\ConsoleLogger.cs" />
+    <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\LoggerFactory.cs" />
+    <Compile Include="Util\LoggerGetter.cs" />
+    <Compile Include="Util\StandardLoggerFactory.cs" />
+    <Compile Include="Util\DefaultConsoleLogger.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Update\GameFrame.resx">
+      <DependentUpon>GameFrame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
